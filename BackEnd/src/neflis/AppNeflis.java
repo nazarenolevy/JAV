@@ -30,10 +30,18 @@ public class AppNeflis {
 		aListSeason.add(s1);
 		aListSeason.add(s2);
 		
-		Serie aSerie = new Serie(aListSeason, "Terror");
+
+		Actor act3 = new Actor("De niro");
+		Actor act4 = new Actor("Di caprio");
+		HashSet<Actor> invitedActors = new HashSet<Actor>();
+		HashSet<Actor> setActors2 = new HashSet<Actor>();
+		invitedActors.add(act3);
+		setActors2.add(act4);
 		
-		Actor act1 = new Actor("Rob", true);
-		Actor act2 = new Actor("Matt", false);
+		Serie aSerie = new Serie(aListSeason, "Terror", setActors2);
+		
+		Actor act1 = new Actor("Rob");
+		Actor act2 = new Actor("Matt");
 		HashSet<Actor> setActors = new HashSet<Actor>();
 		setActors.add(act1);
 		setActors.add(act2);
@@ -63,6 +71,7 @@ public class AppNeflis {
 		
 		System.out.println(aUser.favouriteGenre());
 		
+		System.out.println(film.hasTheActor(act2));
 		
 
 	}

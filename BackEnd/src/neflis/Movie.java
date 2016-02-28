@@ -5,7 +5,6 @@ import java.util.HashSet;
 public class Movie extends Content implements Viewable {
 
 	private int duration;
-	private HashSet<Actor> actors = new HashSet<Actor>();
 	
 	public Movie(int aDuration, HashSet<Actor> setActors, String aGenre){
 		duration = aDuration;
@@ -37,5 +36,8 @@ public class Movie extends Content implements Viewable {
 		return genre == this.getGenre();
 	}
 	
+	public boolean hasTheActor(Actor actor){
+		return actors.contains(actor);
+	}
 	
 }

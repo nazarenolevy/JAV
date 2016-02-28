@@ -63,5 +63,9 @@ public class User {
 		return favouriteGenre;
 
 	}
+	
+	public boolean isFanOf(Actor actor){
+		
+	}
 
 }

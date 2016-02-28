@@ -1,13 +1,11 @@
 package neflis;
 
 public class Actor {
-	
+
 	private String name;
-	private boolean isPrincipal;
-	
-	public Actor(String aName, boolean principal){
+
+	public Actor(String aName) {
 		name = aName;
-		isPrincipal = principal;
 	}
 
 	public String getName() {
@@ -18,14 +16,8 @@ public class Actor {
 		this.name = name;
 	}
 
-	public boolean isPrincipal() {
-		return isPrincipal;
+	public boolean actedIn(Content aContent) {
+		return aContent.hasTheActor(this);
 	}
-
-	public void setPrincipal(boolean isPrincipal) {
-		this.isPrincipal = isPrincipal;
-	}
-	
-	
 
 }

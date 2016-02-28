@@ -1,6 +1,7 @@
 package neflis;
 
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,9 +10,10 @@ public class Serie extends Content {
 
 	private List<Season> seasons = new LinkedList<Season>();
 
-	public Serie(List<Season> aListSeason, String aGenre) {
+	public Serie(List<Season> aListSeason, String aGenre, HashSet<Actor> setActors) {
 		seasons = aListSeason;
 		genre = aGenre;
+		actors = setActors;
 		
 		for(Season aSeason : seasons){
 			aSeason.belongs(this);
@@ -58,5 +60,22 @@ public class Serie extends Content {
 		return chapter;
 	}
 	
+	public boolean hasTheActor(Actor actor){
+		if(actors.contains(actor)){
+			return true;
+		}else{
+			
+			boolean hasTheActor = false;
+			Iterator<Season> seasonIterator = seasons.iterator();
+			
+			while(!hasTheActor && seasonIterator.hasNext()){
+				Season aSeason = seasonIterator.next();
+				hasTheActor = aSeason.hasTheActor(actor);
+			}
+			
+			return hasTheActor;
+		}
+		
+	}
 
 }

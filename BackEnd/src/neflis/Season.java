@@ -96,5 +96,18 @@ public class Season {
 	public String getGenre(){
 		return serie.getGenre();
 	}
+	
+	public boolean hasTheActor(Actor actor){
+		boolean hasTheActor = false;
+		Iterator<Chapter> chapterIterator = chapters.iterator();
+		
+		while(!hasTheActor && chapterIterator.hasNext()){
+			Chapter aChapter = chapterIterator.next();
+			hasTheActor = aChapter.hasTheActor(actor);
+		}
+		
+		return hasTheActor;
+		
+	}
 
 }
