@@ -46,9 +46,12 @@ public class Chapter implements Viewable {
 		this.duration = duration;
 	}
 	
-	//TODO como hacer esto..
 	public String getGenre(){
 		return season.getGenre();
+	}
+	
+	public boolean hasTheGenre(String genre){
+		return genre == this.getGenre();
 	}
 	
 }

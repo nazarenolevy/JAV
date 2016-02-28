@@ -30,7 +30,7 @@ public class AppNeflis {
 		aListSeason.add(s1);
 		aListSeason.add(s2);
 		
-		Serie aSerie = new Serie(aListSeason, "Accion");
+		Serie aSerie = new Serie(aListSeason, "Terror");
 		
 		Actor act1 = new Actor("Rob", true);
 		Actor act2 = new Actor("Matt", false);
@@ -59,7 +59,9 @@ public class AppNeflis {
 		
 		System.out.println(aSerie.lastAvailableChapter().getChapterNumber());
 		
-		System.out.println(aUser.viewedGenres().size());
+		System.out.println(aUser.viewedGenres());
+		
+		System.out.println(aUser.favouriteGenre());
 		
 		
 

@@ -29,5 +29,13 @@ public class Movie extends Content implements Viewable {
 		return this.getGenre();
 	}
 	
+	public int getDuration(){
+		return duration;
+	}
+	
+	public boolean hasTheGenre(String genre){
+		return genre == this.getGenre();
+	}
+	
 	
 }
