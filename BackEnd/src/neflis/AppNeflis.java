@@ -8,9 +8,9 @@ public class AppNeflis {
 
 	public static void main(String[] args) {
 		
-		Chapter ch0101 = new Chapter(1, 100, true);
-		Chapter ch0102 = new Chapter(2,50, false);
-		Chapter ch0201 = new Chapter(1,10, false);
+		Chapter ch0101 = new Chapter(1, 100);
+		Chapter ch0102 = new Chapter(2,50);
+		Chapter ch0201 = new Chapter(1,10);
 		
 		LinkedList<Chapter> aListChapter1 = new LinkedList<Chapter>();
 		LinkedList<Chapter> aListChapter2 = new LinkedList<Chapter>();

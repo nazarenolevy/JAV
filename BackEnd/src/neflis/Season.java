@@ -82,20 +82,10 @@ public class Season {
 	}
 
 	public Chapter lastAvailableChapter() {
-		Chapter chapter = null;
-		Iterator<Chapter> iteratorChapter = chapters.iterator();
-		boolean chaptherNotAvailableFound = false;
 
-		while (!chaptherNotAvailableFound && iteratorChapter.hasNext()) {
-			Chapter aChapter = iteratorChapter.next();
-			if (aChapter.isAvailable()) {
-				chapter = aChapter;
-			}else{
-				chaptherNotAvailableFound = true;
-			}
-		}
-		
-		return chapter;
+		Chapter lastChapter = chapters.get(chapters.size() - 1);
+
+		return lastChapter;
 
 	}
 	

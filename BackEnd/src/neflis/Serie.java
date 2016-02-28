@@ -51,15 +51,10 @@ public class Serie extends Content {
 	}
 
 	public Chapter lastAvailableChapter(){
-		Chapter chapter = null;
-		Iterator<Season> iteratorSeason = seasons.iterator();
+		Season lastSeason = seasons.get(seasons.size() - 1);
 	
-		while(iteratorSeason.hasNext()){
-			Season aSeason = iteratorSeason.next();
-			if(aSeason.lastAvailableChapter() != null){
-				chapter = aSeason.lastAvailableChapter();
-			}
-		}
+		Chapter chapter = lastSeason.lastAvailableChapter();
+
 		return chapter;
 	}
 	

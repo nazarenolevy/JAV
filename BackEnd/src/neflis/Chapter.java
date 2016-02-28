@@ -4,19 +4,15 @@ package neflis;
 public class Chapter implements Viewable {
 
 	private int duration;
-	private boolean isAvailable;
 	private int chapterNumber;
 	private Season season;
 
-	public Chapter(int aChapterNumber, int aDuration, boolean available){
+	public Chapter(int aChapterNumber, int aDuration){
 		duration = aDuration;
-		isAvailable = available;
 		chapterNumber = aChapterNumber;
 	}
 	
-	public boolean isAvailable() {
-		return isAvailable;
-	}
+
 
 	public void belongs(Season aSeason){
 		season = aSeason;
@@ -30,10 +26,6 @@ public class Chapter implements Viewable {
 
 	public void setSeason(Season season) {
 		this.season = season;
-	}
-
-	public void setAvailable(boolean isAvailable) {
-		this.isAvailable = isAvailable;
 	}
 
 
