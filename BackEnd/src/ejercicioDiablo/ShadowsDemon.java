@@ -3,9 +3,9 @@ package ejercicioDiablo;
 public class ShadowsDemon extends Demon{
 	
 	
-	public ShadowsDemon(int anEvilLevel, StateMood state) {
+	public ShadowsDemon(int anEvilLevel, String state) {
 		evilLevel = anEvilLevel;
-		mood = state;
+		super.setMood(state);
 	}
 	
 	private static int CourageLimit;
@@ -20,7 +20,7 @@ public class ShadowsDemon extends Demon{
 	
 	@Override
 	public boolean verifyHunt(Soul aSoul){
-		return super.checkEvilLevel(aSoul) && (aSoul.getCourage() < CourageLimit);
+		return super.verifyHunt(aSoul) && (aSoul.getCourage() < CourageLimit);
 	}
 	
 	@Override

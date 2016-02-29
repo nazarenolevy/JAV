@@ -2,9 +2,9 @@ package ejercicioDiablo;
 
 public class IceDemon extends Demon {
 
-	public IceDemon(int anEvilLevel, StateMood state) {
+	public IceDemon(int anEvilLevel, String state) {
 		evilLevel = anEvilLevel;
-		mood = state;
+		super.setMood(state);
 	}
 
 	public boolean verifyHunt(Soul aSoul) {
@@ -14,7 +14,7 @@ public class IceDemon extends Demon {
 	@Override
 	public void tortureSoul(Soul aSoul){
 		super.reduceGoodnessLevel(aSoul);
-		aSoul.setChill(true);
+		mood.setChill(aSoul);
 	}
 	
 

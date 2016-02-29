@@ -2,20 +2,19 @@ package ejercicioDiablo;
 
 public class FireDemon extends Demon {
 
-	public FireDemon(int anEvilLevel, StateMood state){
+	public FireDemon(int anEvilLevel, String state) {
 		evilLevel = anEvilLevel;
-		mood = state;
+		super.setMood(state);
 	}
-	
-	
+
 	public boolean verifyHunt(Soul aSoul) {
-		return !aSoul.isChilly();
+		return super.verifyHunt(aSoul) && !aSoul.isChilly();
 	}
-	
+
 	@Override
-	public void tortureSoul(Soul aSoul){
+	public void tortureSoul(Soul aSoul) {
 		super.reduceGoodnessLevel(aSoul);
-		aSoul.setChill(false);
+		mood.setChill(aSoul);
 	}
 
 }
