@@ -20,6 +20,16 @@ public abstract class Content {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
+	public HashSet<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(HashSet<Actor> actors) {
+		this.actors = actors;
+	}
+	
+	
 	
 	
 	

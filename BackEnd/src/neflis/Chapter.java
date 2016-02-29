@@ -69,4 +69,12 @@ public class Chapter implements Viewable {
 		return invitedActors.contains(actor);
 	}
 	
+	public HashSet<Actor> getActors(){
+		HashSet<Actor> actors = season.getActors();
+		
+		actors.addAll(invitedActors);
+		
+		return actors;
+	}
+	
 }

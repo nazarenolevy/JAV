@@ -12,6 +12,12 @@ public class Movie extends Content implements Viewable {
 		genre = aGenre;
 	}
 	
+	
+	
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	public void addActor(Actor anActor){
 		actors.add(anActor);
 	}

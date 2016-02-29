@@ -1,5 +1,6 @@
 package neflis;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -108,6 +109,10 @@ public class Season {
 		
 		return hasTheActor;
 		
+	}
+	
+	public HashSet<Actor> getActors(){
+		return serie.getActors();
 	}
 
 }

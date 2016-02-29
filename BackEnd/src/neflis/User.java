@@ -65,6 +65,15 @@ public class User {
 	}
 	
 	public boolean isFanOf(Actor actor){
+		HashSet<Actor> viewedActors = new HashSet<Actor>();
+		
+		for(Viewable aViewable : viewedContent){
+			HashSet<Actor> actorsInViewed = aViewable.getActors();
+			
+			viewedActors.addAll(actorsInViewed);
+		}
+		
+		return (viewedActors.size() == 1 && viewedActors.contains(actor));
 		
 	}
 

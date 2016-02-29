@@ -77,5 +77,9 @@ public class Serie extends Content {
 		}
 		
 	}
+	
+	public HashSet<Actor> getActors(){
+		return this.getActors();
+	}
 
 }
