@@ -6,10 +6,9 @@ import org.slf4j.LoggerFactory;
 public class AppEjercicio3 {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AppEjercicio3.class);
-	
+
 	public static void main(String[] args) {
 
-		
 		Single aClient = new Single("Juan", 2000);
 
 		// Punto 1
@@ -18,13 +17,13 @@ public class AppEjercicio3 {
 
 		try {
 			aClient.reservePackage(aPackage);
-			aClient.buyReservedPackage(aPackage2);
+			aClient.buyReservedPackage(aPackage);
 		} catch (Exception e) {
 			LOGGER.error("Error", e);
 		} finally {
-			if(LOGGER.isInfoEnabled()){
-				LOGGER.info("Info: {}", aClient.getBalance());
-			}
+
+			LOGGER.info("Client balance remaining: {}", aClient.getBalance());
+
 		}
 
 	}

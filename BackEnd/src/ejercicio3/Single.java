@@ -35,6 +35,8 @@ public class Single extends Client{
 			double parcialPrice = aPackage.getTotalPrice() * 0.50;
 			this.balance = this.balance - parcialPrice;
 			this.reservedPackage = aPackage;
+			LOGGER.debug("Single has reserved a package:");
+			
 		}else{
 			throw new BalanceExceptions("Insufficient Balance");
 		}
@@ -48,6 +50,10 @@ public class Single extends Client{
 				this.balance = this.balance - remainingPrice;
 				this.reservedPackage = null;
 				this.arrayPackages.add(aPackage);
+				
+				
+				LOGGER.debug("Single has bought a reserved package:");	
+				
 			}else{
 				throw new BalanceExceptions("Insufficient Balance");
 			}
