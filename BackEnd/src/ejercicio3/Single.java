@@ -1,10 +1,15 @@
 package ejercicio3;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Single extends Client{
 
 	/**
 	 * 
 	 */
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Single.class);
 	private static final long serialVersionUID = 1L;
 	private Pack reservedPackage;
 
@@ -31,7 +36,7 @@ public class Single extends Client{
 			this.balance = this.balance - parcialPrice;
 			this.reservedPackage = aPackage;
 		}else{
-			throw new BalanceExceptions("No hay saldo suficiente");
+			throw new BalanceExceptions("Insufficient Balance");
 		}
 	}
 	
@@ -44,7 +49,7 @@ public class Single extends Client{
 				this.reservedPackage = null;
 				this.arrayPackages.add(aPackage);
 			}else{
-				throw new BalanceExceptions("No hay saldo suficiente");
+				throw new BalanceExceptions("Insufficient Balance");
 			}
 		}else{
 				throw new ReserveExceptions("The package has not been reserved");

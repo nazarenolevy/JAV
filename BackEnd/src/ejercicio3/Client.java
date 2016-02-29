@@ -32,7 +32,7 @@ public abstract class Client extends Throwable{
 				this.balance = this.balance - totalPrice;
 				this.arrayPackages.add(aPackage);
 			}else{
-				throw new BalanceExceptions("No hay saldo suficiente");
+				throw new BalanceExceptions("Insufficient Balance");
 			}
 	}
 	
