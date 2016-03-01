@@ -57,5 +57,12 @@ public class AnagramaTest {
 		
 		assertEquals(0, setVacio.size());
 	}
+	
+	@Test
+	public void testAnagramaCorrecto(){
+		Set<String> setAnagramas = anagrama.anagrama("Hola");
+		
+		assertEquals(24, setAnagramas.size());
+	}
 
 }
