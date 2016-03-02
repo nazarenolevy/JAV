@@ -33,22 +33,21 @@ public class AnagramaTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testIsAnagramaPrimeraPalabraNula(){
 		
-		boolean result = anagrama.isAnagrama(null, "TARTA");
-		
+		anagrama.isAnagrama(null, "TARTA");
 		
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testIsAnagramaSegundaPalabraNula(){
 		
-		boolean result = anagrama.isAnagrama("TARTA", null);
+		anagrama.isAnagrama("TARTA", null);
 		
 		
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testAnagrama(){
-		Set<String> setString = anagrama.anagrama(null);
+		anagrama.anagrama(null);
 	}
 	
 	@Test
