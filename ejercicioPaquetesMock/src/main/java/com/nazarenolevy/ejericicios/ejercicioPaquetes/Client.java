@@ -13,6 +13,10 @@ public abstract class Client extends Throwable{
 	protected ArrayList<Pack> arrayPackages = new ArrayList<Pack>();
 
 
+	public void setArrayPackages(ArrayList<Pack> arrayPackages) {
+		this.arrayPackages = arrayPackages;
+	}
+
 	public double getBalance() {
 		return balance;
 	}
