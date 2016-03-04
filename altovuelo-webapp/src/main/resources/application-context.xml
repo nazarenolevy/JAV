@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="cityService" class="com.despegar.jav.service.MemoryCityServiceImpl" />
+	<bean id="flightService" class="com.despegar.jav.service.GeneratedFlightsServiceImpl" />
+	<bean id="hotelService" class="com.despegar.jav.service.GeneratedHotelServiceImpl" />
+	<bean id="randomProvider" class="com.despegar.jav.service.RandomProviderImpl" />
+
+	<bean id="jsonFactory" class="com.despegar.jav.json.JsonFactory" />
+
+	<bean id="tripGenerator" class="com.despegar.jav.service.TripGenerator">
+		<constructor-arg ref="cityService" />
+		<constructor-arg ref="flightService" />
+		<constructor-arg ref="hotelService" />
+		<constructor-arg ref="randomProvider" />
+	</bean>
+
+	<bean id="tripController" class="com.despegar.jav.controller.TripController">
+		<constructor-arg ref="tripGenerator" />
+	</bean>
+
+	<bean id="helloWorldController" class="com.despegar.jav.controller.HelloWorldController" />
+
+	<bean id="webConfig" class="com.despegar.jav.WebConfig">
+		<constructor-arg ref="jsonFactory" />
+	</bean>
+
+	<context:annotation-config />
+
+</beans>
