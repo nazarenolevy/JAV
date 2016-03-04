@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="tripGenerator" class="com.despegar.altovuelo.examples.TripGenerator">
+       <property name="cityService" ref="cityService"/>
+       <property name="hotelService" ref="hotelService"/>
+       <property name="randomProvider" ref="randomProvider"/>
+       <property name="flightService" ref="flightService"/>
+   </bean>
+
+    <bean id="cityService" class="com.despegar.altovuelo.examples.service.MemoryCityServiceImpl"/>
+    <bean id="flightService" class="com.despegar.altovuelo.examples.service.GeneratedFlightsServiceImpl"/>
+    <bean id="hotelService" class="com.despegar.altovuelo.examples.service.GeneratedHotelServiceImpl"/>
+    <bean id="randomProvider" class="com.despegar.altovuelo.examples.service.RandomProviderImpl"/>
+
+</beans>
