@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".gui.details.DetailsHotelImageFragment">
+
+
+    <FrameLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/detailsHotelImageView"
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            />
+
+        <TextView
+            android:id="@+id/detailsHotelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre Hotel"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ImageView
+            android:id="@+id/detailsHotelStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/detailsHotelRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puntaje"
+            android:layout_gravity="center_horizontal|bottom" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/detailsHotelDescriptionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripcion"/>
+
+
+    <TextView
+        android:id="@+id/detailsHotelDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+</LinearLayout>
