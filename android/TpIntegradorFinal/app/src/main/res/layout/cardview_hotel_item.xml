@@ -9,67 +9,93 @@
 
     <LinearLayout
         android:id="@+id/hotelLayout"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp">
 
-        <FrameLayout
-            android:id="@+id/frameLayoutHotel"
+        <RelativeLayout
+            android:id="@+id/relativetHotel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/hotelImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp" />
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop" />
 
-            <RatingBar
-                android:id="@+id/stars"
-                style="?attr/ratingBarStyleSmall"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:alpha="0.7"
+                android:background="@drawable/gradient" />
 
             <TextView
                 android:id="@+id/hotelName"
+                style="@style/ListHotelTextBehindImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|top"
-                android:text="Nombre Hotel" />
+                android:layout_gravity="left|top"
+                android:textSize="20dp"
 
-        </FrameLayout>
+                />
 
-        <TextView
-            android:id="@+id/hotelRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/frameLayoutHotel"
-            android:gravity="left"
-            android:text="Puntaje"/>
+
+            <TextView
+                android:id="@+id/hotelRating"
+                style="@style/ListHotelTextBehindImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/hotelImageView"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:textSize="15dp" />
+
+            <RatingBar
+                android:id="@+id/stars"
+                style="@style/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/hotelRating"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/ligthYellow"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary" />
+
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/hotelRating">
+            android:layout_alignBottom="@id/viewLine"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/exlusive"
+                style="@style/ListHotelTextExclusiveMobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Exclusivo para moviles"
                 android:layout_weight="1"
                 />
 
             <TextView
                 android:id="@+id/hotelPrice"
+                style="@style/ListHotelTextPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Precio"
-                />
+               />
         </LinearLayout>
 
 

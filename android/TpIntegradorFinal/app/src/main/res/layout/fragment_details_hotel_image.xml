@@ -1,64 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".gui.details.DetailsHotelImageFragment">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <ImageView
             android:id="@+id/detailsHotelImageView"
             android:layout_width="match_parent"
-            android:layout_height="300px"
-            />
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/detailsHotelName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre Hotel"
-            android:layout_gravity="center_horizontal|top" />
 
-        <ImageView
-            android:id="@+id/detailsHotelStars"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:alpha="0.3"
+            android:background="@drawable/gradient" />
+
+        <RatingBar
+            style="@style/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/detailsHotelRating"
+            android:id="@+id/detailHotelName"
+            style="@style/ListHotelTextBehindImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Puntaje"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:id="@+id/detailHotelRating"
+            style="@style/ListHotelTextBehindImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="20dp"/>
+
     </FrameLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
 
-    <TextView
-        android:id="@+id/detailsHotelDescriptionTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descripcion"/>
-
-
-    <TextView
-        android:id="@+id/detailsHotelDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
 
 </LinearLayout>

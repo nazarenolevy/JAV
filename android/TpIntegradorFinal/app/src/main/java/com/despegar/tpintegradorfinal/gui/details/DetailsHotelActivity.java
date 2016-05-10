@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.despegar.tpintegradorfinal.R;
 
+
 public class DetailsHotelActivity extends AppCompatActivity {
 
     @Override
@@ -19,14 +20,18 @@ public class DetailsHotelActivity extends AppCompatActivity {
         toolbar.setTitle("Detalle");
         setSupportActionBar(toolbar);
 
+        Bundle bundle = getIntent().getExtras();
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
             DetailsHotelImageFragment detailsHotelImageFragment = new DetailsHotelImageFragment();
+            detailsHotelImageFragment.setArguments(bundle);
             fragmentTransaction.add(R.id.detailsHotelActivity, detailsHotelImageFragment);
             fragmentTransaction.commit();
         }
+
+
     }
 }

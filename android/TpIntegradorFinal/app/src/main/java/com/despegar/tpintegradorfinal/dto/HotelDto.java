@@ -1,16 +1,12 @@
-package com.despegar.tpintegradorfinal.domain;
+package com.despegar.tpintegradorfinal.dto;
 
-import android.support.v7.widget.RecyclerView;
-
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.zip.GZIPOutputStream;
 
 /**
- * Created by nazarenolevy on 07/05/16.
+ * Created by nazarenolevy on 09/05/16.
  */
-public class Hotel implements Serializable{
+public class HotelDto {
 
     private String id;
     private String description;
@@ -19,25 +15,13 @@ public class Hotel implements Serializable{
     private String address;
     private String mainPicture;
     private BigDecimal rating;
-    private GeoLocation geoLocation;
-    private List<Review> reviews;
-    private Price price;
+    private GeoLocationDto geoLocation;
+    private CityDto city;
+    private List<ReviewsDto> reviews;
+    private List<AmenitieDto> amenities;
+    private PriceDto price;
 
-    public Hotel(){
-
-    }
-
-    public Hotel(Price price, String id, String description, int stars, String name, String address, String mainPicture, BigDecimal rating, GeoLocation geoLocation, List<Review> reviews) {
-        this.price = price;
-        this.id = id;
-        this.description = description;
-        this.stars = stars;
-        this.name = name;
-        this.address = address;
-        this.mainPicture = mainPicture;
-        this.rating = rating;
-        this.geoLocation = geoLocation;
-        this.reviews = reviews;
+    public HotelDto() {
     }
 
     public String getId() {
@@ -96,27 +80,43 @@ public class Hotel implements Serializable{
         this.rating = rating;
     }
 
-    public GeoLocation getGeoLocation() {
+    public GeoLocationDto getGeoLocation() {
         return geoLocation;
     }
 
-    public void setGeoLocation(GeoLocation geoLocation) {
+    public void setGeoLocation(GeoLocationDto geoLocation) {
         this.geoLocation = geoLocation;
     }
 
-    public List<Review> getReviews() {
+    public CityDto getCity() {
+        return city;
+    }
+
+    public void setCity(CityDto city) {
+        this.city = city;
+    }
+
+    public List<ReviewsDto> getReviews() {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
+    public void setReviews(List<ReviewsDto> reviews) {
         this.reviews = reviews;
     }
 
-    public Price getPrice() {
+    public List<AmenitieDto> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(List<AmenitieDto> amenities) {
+        this.amenities = amenities;
+    }
+
+    public PriceDto getPrice() {
         return price;
     }
 
-    public void setPrice(Price price) {
+    public void setPrice(PriceDto price) {
         this.price = price;
     }
 }
