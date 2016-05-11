@@ -1,5 +1,6 @@
 package com.despegar.tpintegradorfinal.dto;
 
+import com.despegar.tpintegradorfinal.domain.Amenity;
 import com.despegar.tpintegradorfinal.domain.CurrencyPrice;
 import com.despegar.tpintegradorfinal.domain.Hotel;
 import com.despegar.tpintegradorfinal.domain.Price;
@@ -15,10 +16,6 @@ public class DomainDto {
     public static List<Hotel> bindToDomain(ResponseDto responseDto){
 
         List<Hotel> hotels = new ArrayList<Hotel>();
-
-        CurrencyPrice currencyPrice = new CurrencyPrice();
-
-
         List<ItemDto> itemsDto = responseDto.getItems();
 
 
@@ -26,7 +23,7 @@ public class DomainDto {
             HotelDto hotelDto = itemDto.getHotel();
             PriceDto priceDto = itemDto.getPrice();
             CurrencyDto currencyDto = itemDto.getPrice().getCurrency();
-            Price price = new Price();
+            List<AmenityDto> amenitiesDto = itemDto.getHotel().getAmenities();
 
             Hotel hotel = new Hotel();
             hotel.setId(hotelDto.getId());
@@ -37,16 +34,22 @@ public class DomainDto {
             hotel.setRating(hotelDto.getRating());
             hotel.setStars(hotelDto.getStars());
 
+            Price price = new Price();
             price.setBase(priceDto.getBase());
-
+            CurrencyPrice currencyPrice = new CurrencyPrice();
             currencyPrice.setCode(currencyDto.getCode());
             currencyPrice.setMask(currencyDto.getMask());
             price.setCurrencyPrice(currencyPrice);
-
             hotel.setPrice(price);
 
-
-
+            List<Amenity> amenities = new ArrayList<Amenity>();
+            for (AmenityDto amenityDto : amenitiesDto){
+                Amenity amenity = new Amenity();
+                amenity.setId(amenityDto.getId());
+                amenity.setDescription(amenityDto.getDescription());
+                amenities.add(amenity);
+            }
+            hotel.setAmenities(amenities);
 
             hotels.add(hotel);
 

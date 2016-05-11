@@ -21,13 +21,14 @@ public class Hotel implements Serializable{
     private BigDecimal rating;
     private GeoLocation geoLocation;
     private List<Review> reviews;
+    private List<Amenity> amenities;
     private Price price;
 
     public Hotel(){
 
     }
 
-    public Hotel(Price price, String id, String description, int stars, String name, String address, String mainPicture, BigDecimal rating, GeoLocation geoLocation, List<Review> reviews) {
+    public Hotel(Price price, String id, String description, int stars, String name, String address, String mainPicture, BigDecimal rating, GeoLocation geoLocation, List<Review> reviews, List<Amenity> amenities) {
         this.price = price;
         this.id = id;
         this.description = description;
@@ -38,6 +39,7 @@ public class Hotel implements Serializable{
         this.rating = rating;
         this.geoLocation = geoLocation;
         this.reviews = reviews;
+        this.amenities = amenities;
     }
 
     public String getId() {
@@ -119,4 +121,14 @@ public class Hotel implements Serializable{
     public void setPrice(Price price) {
         this.price = price;
     }
+
+    public List<Amenity> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(List<Amenity> amenities) {
+        this.amenities = amenities;
+    }
+
+
 }

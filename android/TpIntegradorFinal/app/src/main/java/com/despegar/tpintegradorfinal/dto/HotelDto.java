@@ -18,7 +18,7 @@ public class HotelDto {
     private GeoLocationDto geoLocation;
     private CityDto city;
     private List<ReviewsDto> reviews;
-    private List<AmenitieDto> amenities;
+    private List<AmenityDto> amenities;
     private PriceDto price;
 
     public HotelDto() {
@@ -104,11 +104,11 @@ public class HotelDto {
         this.reviews = reviews;
     }
 
-    public List<AmenitieDto> getAmenities() {
+    public List<AmenityDto> getAmenities() {
         return amenities;
     }
 
-    public void setAmenities(List<AmenitieDto> amenities) {
+    public void setAmenities(List<AmenityDto> amenities) {
         this.amenities = amenities;
     }
 

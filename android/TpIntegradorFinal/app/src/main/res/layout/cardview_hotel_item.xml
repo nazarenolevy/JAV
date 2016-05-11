@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp">
+        android:padding="5dp">
 
         <RelativeLayout
             android:id="@+id/relativetHotel"
@@ -23,14 +22,13 @@
             <ImageView
                 android:id="@+id/hotelImageView"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:alpha="0.7"
+                android:layout_height="130dp"
                 android:background="@drawable/gradient" />
 
             <TextView
@@ -52,7 +50,8 @@
                 android:layout_alignBottom="@id/hotelImageView"
                 android:layout_gravity="left"
                 android:gravity="left"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:text="rating"/>
 
             <RatingBar
                 android:id="@+id/stars"
@@ -64,6 +63,7 @@
                 android:numStars="5"
                 android:progressTint="@color/ligthYellow"
                 />
+
 
         </RelativeLayout>
 
